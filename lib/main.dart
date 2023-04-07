@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:in_out/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +13,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'InOut - Budget Calculator',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Scaffold(
-        body: Center(
-          child: Text('my budget calculator'),
+      theme: ThemeData(useMaterial3: true),
+      home: Scaffold(
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.notifications),
+            )
+          ],
         ),
+        body: HomePage(),
+        drawer: Drawer(),
       ),
     );
   }
